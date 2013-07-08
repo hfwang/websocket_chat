@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="html5boilerplate/css/normalize.css">
+    <link rel="stylesheet" href="html5boilerplate/css/main.css">
+    <script src="html5boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+    <script type="text/html" id="systemMessageTemplate">
+      <div class="message-container" style="clear: both; padding: 0.25em 0 0.25em 0; text-align: center">
+        <div class="message-body" style="padding: 1em 0">
+          <%= message %>
+        </div>
+      </div>
+    </script>
+    <script type="text/html" id="messageTemplate">
+      <div class="message-container" style="clear: both; padding: 0.25em 0 0.25em 0">
+        <img src="http://lim-cdn.redrobotlabs.com/images/<%= icon %>" style="float: left; height: 3em; width: 3em"/>
+        <div style="background: #f3f3f3; margin: 0 0 0 3em; padding: 0 0.5em">
+          <div style="float: right">
+            <%= new Date(time * 1000).toLocaleString() %>
+          </div>
+          <a href="https://limstaging.redrobotlabs.com/tools/avatars/<%= id %>"><%= name %></a>
+        </div>
+        <div class="message-body" style="margin: 0 0 0 3em; padding: 0 0 0 0.5em">
+          <%= message %>
+        </div>
+      </div>
+    </script>
+  </head>
+  <body style="padding: 3.5em 0;">
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div id="chrome" style="position: fixed; bottom: 0; width: 100%; background: #fff">
+      <label style="float: right; padding: 1em">
+        <input type="checkbox" id="pause"/>
+        Pause
+      </label>
+      <form id="message-form" style="padding: 1em">
+        <select name="userId">
+          <option value="15533">Red Robot</option>
+          <option value="15023">Maldor</option>
+          <option value="15024">DarkWulf</option>
+        </select>
+        <input type="text" name="message" autocomplete="off" style="width: 50%"/>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    <div id="debug" style="position: fixed; top: 0; width: 100%; padding: 0 1em; background: rgba(255, 255, 255, 0.9); text-align: center">
+    </div>
+    <div id="msg">
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="html5boilerplate/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+      <script src="msgpack/msgpack.codec.js"></script>
+      <script src="html5boilerplate/js/plugins.js"></script>
+      <script src="html5boilerplate/js/main.js"></script>
+      <script src="templates.js"></script>
+      <script src="chat.js"></script>
+  </body>
+</html>
